@@ -1,18 +1,18 @@
 {
- "logs":[
-	 {"id":1,
-		 "message":"Workstation 008 not responding",
-		 "attention":true,
-		 "date":"03-02-2019",
-		 "tech":"bruno silva"
-	 }],
- "techs": 
- [
-	 {
-		 "id":1,
-		 "firstName":"Bruno",
-		 "lastName":"Silva"
-	 }
- ]
-
+  "logs": [
+    {
+      "id": 1,
+      "message": "Workstation 008 not responding",
+      "attention": true,
+      "date": "06/14/2019",
+      "tech": "bruno silva"
+    }
+  ],
+  "techs": [
+    {
+      "id": 1,
+      "firstName": "Bruno",
+      "lastName": "Silva"
+    }
+  ]
 }
