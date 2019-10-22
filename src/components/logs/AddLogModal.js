@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import M from "materialize-css/dist/js/materialize.min.js";
 import { connect } from "react-redux";
 import { createLog } from "../../actions/logActions";
+import TechSelectOptions from "../techs/TechSelectOptions";
+
 const AddLogModal = ({ createLog }) => {
   const [message, setMessage] = useState("");
   const [attention, setAttention] = useState(false);
@@ -52,8 +54,8 @@ const AddLogModal = ({ createLog }) => {
               className="browser-default"
               onChange={e => setTech(e.target.value)}
             >
-              <option value="">Escolha o técnico responsável</option>
-              <option value="bruno silva">bruno silva</option>
+              <option value="">Escolha um técnico </option>
+              <TechSelectOptions />
             </select>
           </div>
         </div>

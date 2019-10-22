@@ -2,17 +2,17 @@
   "logs": [
     {
       "message": "teste",
-      "tech": "bruno silva",
+      "tech": "BRUNO CHRISTIAN SILVA",
       "attention": true,
-      "date": "2019-10-22T16:01:45.478Z",
+      "date": "2019-10-22T18:21:06.653Z",
       "id": 1
     }
   ],
   "techs": [
     {
-      "id": 1,
-      "firstName": "Bruno",
-      "lastName": "Silva"
+      "firstName": "BRUNO CHRISTIAN",
+      "lastName": "SILVA",
+      "id": 1
     }
   ]
 }
