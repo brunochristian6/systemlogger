@@ -1,23 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
+import { connect } from "react-redux";
 import LogItem from "./LogItem";
 import Loader from "../Loader";
-const Logs = () => {
-  const [logs, setLogs] = useState([]);
-  const [loading, setLoading] = useState(false);
+import { getLogs } from "../../actions/logActions";
 
+const Logs = ({ logs, getLogs, loading }) => {
   useEffect(() => {
     getLogs();
   }, []);
 
-  const getLogs = async () => {
-    setLoading(true);
-    const res = await fetch("http://localhost:5000/logs");
-    const data = await res.json();
-    setLogs(data);
-    setLoading(false);
-  };
-
-  if (loading) {
+  if (loading || logs.length === null) {
     return <Loader />;
   }
   return (
@@ -26,7 +18,7 @@ const Logs = () => {
         <h4 className="center">Tickets</h4>
       </li>
       {!loading && logs.length === 0 ? (
-        <p className="center">No logs to show</p>
+        <p className="center">Nenhum Ticket Adicionado !</p>
       ) : (
         logs.map(log => <LogItem key={log.id} log={log} />)
       )}
@@ -34,4 +26,14 @@ const Logs = () => {
   );
 };
 
-export default Logs;
+const mapStateToProps = state => {
+  return {
+    logs: state.log.logs,
+    loading: state.log.loading
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  { getLogs }
+)(Logs);

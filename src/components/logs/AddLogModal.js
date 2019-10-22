@@ -1,18 +1,26 @@
 import React, { useState } from "react";
 import M from "materialize-css/dist/js/materialize.min.js";
-
-const AddLogModal = () => {
+import { connect } from "react-redux";
+import { createLog } from "../../actions/logActions";
+const AddLogModal = ({ createLog }) => {
   const [message, setMessage] = useState("");
   const [attention, setAttention] = useState(false);
   const [tech, setTech] = useState("");
 
   const onSubmit = () => {
-    if (message === "" || tech === "" || attention === "") {
+    if (message === "" || tech === "") {
       M.toast({
         html: "Por favor preencha todos os dados"
       });
     } else {
-      console.log("dsada");
+      const newLog = {
+        message,
+        tech,
+        attention,
+        date: new Date()
+      };
+
+      createLog(newLog);
       //clear Fields
       setMessage("");
       setTech("");
@@ -41,15 +49,11 @@ const AddLogModal = () => {
         <div className="row">
           <div className="input-field">
             <select
-              name="tech"
-              id="tech"
               className="browser-default"
               onChange={e => setTech(e.target.value)}
             >
-              <option value="" disabled>
-                Escolha o técnico responsável
-              </option>
-              <option value="John dow">John Doe</option>
+              <option value="">Escolha o técnico responsável</option>
+              <option value="bruno silva">bruno silva</option>
             </select>
           </div>
         </div>
@@ -88,4 +92,7 @@ const modalStyle = {
   width: "75%",
   heigth: "75%"
 };
-export default AddLogModal;
+export default connect(
+  null,
+  { createLog }
+)(AddLogModal);

@@ -1,0 +1,12 @@
+export const SET_LOADING = "SET_LOADING";
+export const GET_LOGS = "GET_LOGS";
+export const SEARCH_LOGS = "SEARCH_LOGS";
+export const CREATE_LOG = "CREATE_LOG";
+export const EDIT_LOG = "EDIT_LOG";
+export const DELETE_LOG = "DELETE_LOG";
+export const GET_TECHS = "GET_TECHS";
+export const CREATE_TECH = "CREATE_TECH";
+export const EDIT_TECH = "EDIT_TECH";
+export const DELETE_TECH = "DELETE_TECH";
+export const SET_CURRENT = "SET_CURRENT";
+export const CLEAR_CURRENT = "CLEAR_CURRENT";

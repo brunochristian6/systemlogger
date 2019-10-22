@@ -1,11 +1,11 @@
 {
   "logs": [
     {
-      "id": 1,
-      "message": "Workstation 008 not responding",
+      "message": "teste",
+      "tech": "bruno silva",
       "attention": true,
-      "date": "06/14/2019",
-      "tech": "bruno silva"
+      "date": "2019-10-22T16:01:45.478Z",
+      "id": 1
     }
   ],
   "techs": [
